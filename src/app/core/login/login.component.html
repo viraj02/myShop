@@ -1,17 +1,26 @@
 <div class="container">
-    <form class="form" id="login">
+    <form class="form" id="login" [formGroup]="loginForm" (ngSubmit)="submitUserDetails()">
         <h1 class="form__title"> <b> Login </b> </h1>
         <div class="form__message form__message--error"></div>
         <div class="form__input-group">
 
             <mat-form-field class="example-full-width form__input">
                 <mat-label>Email</mat-label>
-                <input matInput type="email" placeholder="example@example.com">
+                <input matInput type="email" formControlName="email" placeholder="example@example.com">
+                <mat-error *ngIf="formControls?.email?.errors?.required">
+                    Email is required
+                </mat-error>
+                <mat-error *ngIf="formControls?.email?.errors?.pattern">
+                    Email is not valid
+                </mat-error>
             </mat-form-field>
 
             <mat-form-field class="example-full-width form__input">
                 <mat-label>Password</mat-label>
-                <input matInput type="password" placeholder="Password">
+                <input matInput type="password" formControlName="password" placeholder="Password">
+                <mat-error *ngIf="formControls?.password?.errors?.required">
+                    Password is required
+                </mat-error>
             </mat-form-field>
 
             <button id="basic" class="form__button" type="submit" mat-raised-button>
