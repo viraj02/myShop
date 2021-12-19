@@ -1,6 +1,6 @@
 <div class="container">
     <form class="form" id="login">
-        <h1 class="form__title">Login</h1>
+        <h1 class="form__title"> <b> Login </b> </h1>
         <div class="form__message form__message--error"></div>
         <div class="form__input-group">
 
@@ -18,8 +18,10 @@
                 Login
             </button>
 
-            <p class="form__text alreadyAcc">
-                <a class="form__link" href="javascript:void(0);" id="linkLogin">Already have an account? Sign in</a>
+            <p class="form__text alreadyAcc" (click)="navigate('sign-in')">
+                <a class="form__link" id="linkLogin">
+                    <b> Already have an account? Sign in </b>
+                </a>
             </p>
 
         </div>
