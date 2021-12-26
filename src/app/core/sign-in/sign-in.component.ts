@@ -38,10 +38,10 @@ export class SignInComponent implements OnInit {
   submitUserDetails(): void {
     console.log(this.formControls);
     if (!this.loginForm.valid) {
-      console.log('Unsuccessful Login');
+      console.log('Unsuccessful Sign In');
       return;
     }
-    console.log('Login Successfully');
+    console.log('Sign In Successfully');
   }
 
   navigate(url: string): void {
