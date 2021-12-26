@@ -22,8 +22,10 @@ export class SignInComponent implements OnInit {
   initializeForm(): void {
     this.loginForm = new FormGroup(
       {
+        name: new FormControl('', Validators.required),
         email: new FormControl('', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$')]),
-        password: new FormControl('', Validators.required)
+        password: new FormControl('', Validators.required),
+        confirmpassword: new FormControl('', Validators.required)
       }
     );
   }
