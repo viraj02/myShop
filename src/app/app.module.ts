@@ -20,6 +20,7 @@ import { fakeBackendProvider } from './_helpers/fake-backend';
     BrowserAnimationsModule,
     CoreModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
