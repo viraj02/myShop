@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
 
   submitUserDetails(): void {
     console.log(this.formControls);
-    if (!this.loginForm.valid) {
+    if (this.loginForm.invalid) {
       console.log('Unsuccessful Login');
       return;
     }
