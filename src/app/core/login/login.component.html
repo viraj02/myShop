@@ -1,46 +1,6 @@
-<div class="container">
-    <form class="form" id="login" [formGroup]="loginForm" (ngSubmit)="submitUserDetails()">
-        <h1 class="form__title"> <b> Login </b> </h1>
-        <div class="form__message form__message--error"></div>
-        <div class="form__input-group">
-
-            <mat-form-field class="example-full-width form__input">
-                <mat-label>Email</mat-label>
-                <input matInput type="email" formControlName="email" placeholder="example@example.com">
-                <mat-error *ngIf="formControls?.email?.errors?.required">
-                    Email is required
-                </mat-error>
-                <mat-error *ngIf="formControls?.email?.errors?.pattern">
-                    Email is not valid
-                </mat-error>
-            </mat-form-field>
-
-            <mat-form-field class="example-full-width form__input">
-                <mat-label>Password</mat-label>
-                <input matInput type="password" formControlName="password" placeholder="Password" autocomplete="off">
-                <mat-error *ngIf="formControls?.password?.errors?.required">
-                    Password is required
-                </mat-error>
-            </mat-form-field>
-
-            <button id="basic" class="form__button" type="submit" mat-raised-button>
-                Login
-            </button>
-
-            <p class="form__text alreadyAcc" (click)="navigate('sign-in')"
-                title="Create a new account, if not already created.">
-                <a class="form__link">
-                    <b> Already have an account? Sign in </b>
-                </a>
-            </p>
-
-        </div>
 
 
-
-    </form>
-</div>
-
+<p>Advertisement</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0fPd01AQstg?controls=0" title="YouTube video player"
     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen>
