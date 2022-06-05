@@ -1,7 +1,36 @@
+<div class="container">
+    <h2>Login Form</h2>
+    <form>
+
+        <p>
+            <mat-form-field appearance="standard">
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="Username">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-form-field appearance="standard">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+        </p>
 
 
-<p>Advertisement</p>
+    </form>
+    <p>Not having account? <button (click)="navigate('/register')"> Register </button> </p>
+</div>
+
+
+
+<!-- <p>Advertisement</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0fPd01AQstg?controls=0" title="YouTube video player"
     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen>
-</iframe>
+</iframe> -->
