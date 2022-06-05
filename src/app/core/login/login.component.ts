@@ -38,12 +38,17 @@ export class LoginComponent implements OnInit {
 
   initializeForm(): void {
     // [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$')]
-    this.loginForm = new FormGroup(
-      {
-        email: new FormControl('', Validators.required),
-        password: new FormControl('', Validators.required)
-      }
-    );
+    // this.loginForm = new FormGroup(
+    //   {
+    //     email: new FormControl('', Validators.required),
+    //     password: new FormControl('', Validators.required)
+    //   }
+    // );
+
+    this.loginForm = this.formBuilder.group({
+      userName: ['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      password: ['', [Validators.required, Validators.minLength(3)]]
+    });
   }
 
   // tslint:disable-next-line: typedef
@@ -71,6 +76,10 @@ export class LoginComponent implements OnInit {
           this.loading = false;
           console.log(error);
         });
+  }
+
+  onSubmit(form: FormGroup): void {
+    console.log(form);
   }
 
   navigate(url: string): void {
